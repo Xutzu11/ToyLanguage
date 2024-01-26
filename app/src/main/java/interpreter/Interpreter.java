@@ -283,7 +283,7 @@ public class Interpreter {
     public static void createExample13() throws MyException, IOException {
         IStmt stmt = new CompStmt(new VarDeclStmt("v", new IntType()),
                     new CompStmt(new VarDeclStmt("a", new RefType(new IntType())),
-                    new CompStmt(new AssignStmt("v", new ValueExp(new BoolValue(true))),
+                    new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(12))),
                     new CompStmt(new NewStmt("a", new ValueExp(new IntValue(22))),
                     new CompStmt(new ForkStmt(new CompStmt(new HeapWriteStmt("a", new ValueExp(new IntValue(30))), 
                     new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(32))), 
@@ -305,7 +305,7 @@ public class Interpreter {
 
     public static void createExample14() throws MyException, IOException {
         IStmt stmt = new CompStmt(new VarDeclStmt("a", new RefType(new IntType())),
-                    new CompStmt(new VarDeclStmt("counter", new BoolType()),
+                    new CompStmt(new VarDeclStmt("counter", new IntType()),
                     new WhileStmt(new RelationalExp("<", new VarExp("counter"), new ValueExp(new IntValue(10))),
                     new CompStmt(new ForkStmt(new ForkStmt(new NewStmt("a", new VarExp("counter")))), new AssignStmt("counter", new ArithExp('+', new VarExp("counter"), new ValueExp(new IntValue(1))))))));
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
