@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="579.0" prefWidth="698.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PrimaryController">
+<VBox alignment="CENTER" prefHeight="575.0" prefWidth="872.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PrimaryController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -34,7 +34,7 @@
                      <font>
                         <Font size="13.0" />
                      </font></Label>
-                  <TableView fx:id="symTable" prefHeight="174.0" prefWidth="248.0">
+                  <TableView fx:id="symTable" prefHeight="174.0" prefWidth="217.0">
                      <columns>
                         <TableColumn fx:id="variableSym" prefWidth="127.0" text="Variable" />
                         <TableColumn fx:id="valueSym" prefWidth="144.0" text="Value" />
@@ -54,35 +54,51 @@
       </HBox>
       <HBox prefHeight="149.0" prefWidth="658.0">
          <children>
-            <VBox prefHeight="149.0" prefWidth="219.0">
+            <VBox prefHeight="149.0" prefWidth="161.0">
                <children>
                   <Label alignment="CENTER" prefHeight="17.0" prefWidth="279.0" text="Output">
                      <font>
                         <Font name="Constantia" size="13.0" />
                      </font></Label>
-                  <ListView fx:id="outputList" prefHeight="161.0" prefWidth="174.0" />
+                  <ListView fx:id="outputList" prefHeight="135.0" prefWidth="159.0" />
                </children>
             </VBox>
-            <VBox prefHeight="149.0" prefWidth="271.0">
+            <VBox prefHeight="149.0" prefWidth="198.0">
                <children>
                   <Label alignment="CENTER" prefHeight="17.0" prefWidth="271.0" text="Heap table" textAlignment="CENTER">
                      <font>
                         <Font name="Constantia" size="13.0" />
                      </font></Label>
-                  <TableView fx:id="heapTable" prefHeight="176.0" prefWidth="181.0">
+                  <TableView fx:id="heapTable" prefHeight="133.0" prefWidth="203.0">
                      <columns>
-                        <TableColumn fx:id="addressHeap" prefWidth="127.0" text="Address" />
-                        <TableColumn fx:id="valueHeap" prefWidth="144.0" text="Value" />
+                        <TableColumn fx:id="addressHeap" prefWidth="84.00002801418304" text="Address" />
+                        <TableColumn fx:id="valueHeap" prefWidth="110.66669464111328" text="Value" />
                      </columns></TableView>
                </children>
             </VBox>
-            <VBox prefHeight="149.0" prefWidth="172.0">
+            <VBox prefHeight="149.0" prefWidth="142.0">
                <children>
                   <Label alignment="CENTER" prefHeight="17.0" prefWidth="193.0" text="File table">
                      <font>
                         <Font name="Constantia" size="13.0" />
                      </font></Label>
                   <ListView fx:id="fileTable" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="149.0" prefWidth="280.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="303.0" text="Semaphore table">
+                     <font>
+                        <Font name="Constantia" size="13.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="semaphoreTable" prefHeight="133.0" prefWidth="280">
+                     <columns>
+                        <TableColumn fx:id="indexSem" prefWidth="80" text="Index" />
+                        <TableColumn fx:id="valueSem" prefWidth="80" text="Value" />
+                        <TableColumn fx:id="listOfValuesSem" prefWidth="120" text="ListOfValues" />
+                     </columns>
+                  </TableView>
                </children>
             </VBox>
          </children>

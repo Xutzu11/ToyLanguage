@@ -10,8 +10,10 @@ import java.util.concurrent.Executors;
 
 
 import adt.MyIStack;
+import adt.MyIToySemaphore;
 import adt.MyIList;
 import adt.PrgState;
+import adt.Tuple;
 import exc.EndOfProgramException;
 import repo.IRepo;
 import stmt.IStmt;
@@ -46,6 +48,10 @@ public class Controller {
 
     public MyIList < Value > getOutput() throws MyException {
         return finalOutput;
+    }
+
+    public MyIToySemaphore < Tuple > getSemaphore() throws MyException {
+        return repo.getPrg().getSemaphore();
     }
 
     public MyIStack < IStmt > getStack() throws RepoStateException {

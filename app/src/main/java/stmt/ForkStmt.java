@@ -23,7 +23,7 @@ public class ForkStmt implements IStmt{
         MyIStack < IStmt > newExeStack = new MyStack<IStmt>();
         newSymTbl.copyContent(state.getSymTable().getContent());
         PrgState newState = new PrgState(newExeStack, newSymTbl, state.getOut(), 
-                                state.getFileTable(), state.getHeap(), stmt);
+                                state.getFileTable(), state.getHeap(), stmt, state.getSemaphore());
         return newState;
     }
 

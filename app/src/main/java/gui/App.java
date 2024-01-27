@@ -127,6 +127,12 @@ public class App extends Application {
         catch (MyException e) {
             triggerWarning(e.getMessage(), 16);
         }
+        try {
+            i.createExample17();
+        }
+        catch (MyException e) {
+            triggerWarning(e.getMessage(), 17);
+        }
 
         FXMLLoader fxmlLoaderPrim = new FXMLLoader();
         FXMLLoader fxmlLoaderSec = new FXMLLoader();
