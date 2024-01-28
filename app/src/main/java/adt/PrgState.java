@@ -13,20 +13,20 @@ public class PrgState{
     private int id;
     private MyIStack < IStmt > exeStack;
     private MyIDict < String, Value > symTable;
-    private MyIToySemaphore < Tuple > semaphore;
+    private MyILatch < Integer > latch;
     private MyIList < Value > out;
     private MyIFileTable < StringValue, BufferedReader > fileTable;
     private MyIHeap < Value > heap;
     // private IStmt originalProgram; //optional field, but good to have
     
     public PrgState(MyIStack < IStmt > stk, MyIDict < String, Value > symtbl, MyIList < Value >
-            ot, MyIFileTable < StringValue, BufferedReader > ftb, MyIHeap < Value > heap, IStmt prg, MyIToySemaphore < Tuple > semaphore){
+            ot, MyIFileTable < StringValue, BufferedReader > ftb, MyIHeap < Value > heap, IStmt prg, MyILatch < Integer > latch){
         exeStack = stk;
         symTable = symtbl;
         out = ot;
         fileTable = ftb;
         this.heap = heap;
-        this.semaphore = semaphore;
+        this.latch = latch;
         id = getNextId();
         /// originalProgram = deepCopy(prg);
         stk.push(prg);
@@ -57,8 +57,8 @@ public class PrgState{
         this.heap = heap;
     }
 
-    public MyIToySemaphore < Tuple > getSemaphore() {
-        return this.semaphore;
+    public MyILatch < Integer > getLatch() {
+        return this.latch;
     }
 
     public void setExeStack(MyIFileTable < StringValue, BufferedReader > fileTable) {
@@ -121,8 +121,8 @@ public class PrgState{
         rez += this.out.fileString();
         rez += "FileTable:\n";
         rez += this.fileTable.fileString();
-        rez += "Semaphore:\n";
-        rez += this.semaphore.fileString();
+        rez += "Latch:\n";
+        rez += this.latch.fileString();
         rez += "Heap:\n";
         rez += this.heap.fileString();
         return rez;

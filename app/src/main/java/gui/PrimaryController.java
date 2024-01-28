@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Set;
 
 import adt.PrgState;
-import adt.Tuple;
 import controller.Controller;
 import exc.MyException;
 import exc.RepoStateException;
@@ -41,10 +40,9 @@ public class PrimaryController {
     @FXML private TableView < SymEntry > symTable;
     @FXML private TableColumn < SymEntry, String > variableSym;
     @FXML private TableColumn < SymEntry, String > valueSym;
-    @FXML private TableView < SemaphoreEntry > semaphoreTable;
-    @FXML private TableColumn < SemaphoreEntry, String > indexSem;
-    @FXML private TableColumn < SemaphoreEntry, String > valueSem;
-    @FXML private TableColumn < SemaphoreEntry, String > listOfValuesSem;
+    @FXML private TableView < LatchEntry > latchTable;
+    @FXML private TableColumn < LatchEntry, String > locationLatch;
+    @FXML private TableColumn < LatchEntry, String > valueLatch;
 
     private PrgState selectedState;
 
@@ -78,11 +76,10 @@ public class PrimaryController {
         valueSym.setCellValueFactory(new PropertyValueFactory<>("value"));
         symTable.getColumns().addAll(variableSym, valueSym);
 
-        semaphoreTable.getColumns().clear();
-        indexSem.setCellValueFactory(new PropertyValueFactory<>("index"));
-        valueSem.setCellValueFactory(new PropertyValueFactory<>("value"));
-        listOfValuesSem.setCellValueFactory(new PropertyValueFactory<>("listOfValues"));
-        semaphoreTable.getColumns().addAll(indexSem, valueSem, listOfValuesSem);
+        latchTable.getColumns().clear();
+        locationLatch.setCellValueFactory(new PropertyValueFactory<>("location"));
+        valueLatch.setCellValueFactory(new PropertyValueFactory<>("value"));
+        latchTable.getColumns().addAll(locationLatch, valueLatch);
     }
 
     public void getSelection(String stmt) {
@@ -153,12 +150,12 @@ public class PrimaryController {
         }
     }
 
-    public void updateSemaphore() throws MyException {
-        semaphoreTable.getItems().clear();
+    public void updateLatch() throws MyException {
+        latchTable.getItems().clear();
         if (mainContr.programEnded()) return;
-        Map < Integer, Tuple > sem = mainContr.getSemaphore().getContent();
-        for (Map.Entry<Integer, Tuple > k:sem.entrySet()) {
-            semaphoreTable.getItems().add(new SemaphoreEntry(k.getKey(), k.getValue().third-k.getValue().first+1, k.getValue().second));
+        Map < Integer, Integer > latch = mainContr.getLatch().getContent();
+        for (Map.Entry<Integer, Integer > k:latch.entrySet()) {
+            latchTable.getItems().add(new LatchEntry(k.getKey(), k.getValue()));
         }
     }
 
@@ -179,7 +176,7 @@ public class PrimaryController {
             updateFiles();
             updateOutput();
             updatePrgStates();
-            updateSemaphore();
+            updateLatch();
         }
         catch (MyException e) {
             triggerAlert(e.getMessage());

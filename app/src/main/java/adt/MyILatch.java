@@ -2,7 +2,7 @@ package adt;
 
 import java.util.Map;
 
-public interface MyIToySemaphore < T > {
+public interface MyILatch < T > {
     int allocate(T value);
     T lookup(int address);
     void update(int address, T value);

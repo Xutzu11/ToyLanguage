@@ -2,40 +2,42 @@ package stmt;
 
 import java.io.IOException;
 import type.*;
-import value.IntValue;
-import value.Value;
 import adt.MyIDict;
-import adt.MyIToySemaphore;
+import adt.MyILatch;
 import adt.PrgState;
-import adt.Tuple;
-import exc.InvalidMemoryAccess;
 import exc.InvalidOperandException;
 import exc.MyException;
+import exc.VariableUndefinedException;
+import type.IntType;
+import value.*;
 
-public class ReleaseStmt implements IStmt {
+public class CountdownStmt implements IStmt{
     private String var;
-
-    public ReleaseStmt(String var) {
+    
+    public CountdownStmt(String var) {
         this.var = var;
     }
 
     @Override
     public PrgState execute(PrgState state) throws MyException, IOException {
         MyIDict < String, Value > tbl = state.getSymTable();
-        MyIToySemaphore < Tuple > sem = state.getSemaphore();
+        MyILatch < Integer > latch = state.getLatch();
         int index = ((IntValue)tbl.lookUp(var)).getVal();
-        if (!sem.isDefined(index)) throw new InvalidMemoryAccess();
-        Tuple t = sem.lookup(index);
-        if (t.second.contains(state.getId())) {
-            t.second.remove(t.second.indexOf(state.getId()));
+        if (latch.isDefined(index)) {
+            if (latch.lookup(index) > 0) {
+                latch.update(index, latch.lookup(index)-1);
+                state.getOut().add(new IntValue(state.getId()));
+            }
+            return null;
         }
         return null;
     }
 
     @Override
     public MyIDict <String, Type> typecheck(MyIDict <String, Type> typeEnv) throws MyException {
-        Type tvar = typeEnv.lookUp(var);
-        if (tvar.equals(new IntType())) {
+        Type t = typeEnv.lookUp(var);
+        if (t == null) throw new VariableUndefinedException(var);
+        if (t.equals(new IntType())) {
             return typeEnv;
         }
         else throw new InvalidOperandException("int");
@@ -43,6 +45,6 @@ public class ReleaseStmt implements IStmt {
 
     @Override
     public String toString() {
-        return "release(" + var + ")";
+        return "countdown(" + var + ")";
     }
 }
