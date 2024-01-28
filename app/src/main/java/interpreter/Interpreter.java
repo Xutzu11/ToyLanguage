@@ -5,6 +5,7 @@ import cmd.RunExample;
 import repo.IRepo;
 import repo.Repo;
 import stmt.AssignStmt;
+import stmt.CallFuncStmt;
 import stmt.CompStmt;
 import stmt.ForkStmt;
 import stmt.HeapWriteStmt;
@@ -24,6 +25,8 @@ import value.Value;
 import type.*;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import adt.*;
 import controller.*;
@@ -41,10 +44,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>(); 
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex1.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("1",stmt.toString(), c));
@@ -60,10 +65,13 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+          
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex2.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("2", stmt.toString(), c));
@@ -79,10 +87,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex3.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("3", stmt.toString(), c));
@@ -101,10 +111,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex4.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("4", stmt.toString(), c));
@@ -124,10 +136,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();    
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex5.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("5", stmt.toString(), c));
@@ -142,10 +156,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex6.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("6", stmt.toString(), c));
@@ -162,10 +178,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex7.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("7", stmt.toString(), c));
@@ -181,10 +199,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex8.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("8", stmt.toString(), c));
@@ -200,10 +220,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex9.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("9", stmt.toString(), c));
@@ -222,10 +244,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex10.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("10", stmt.toString(), c));
@@ -250,10 +274,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex11.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("11", stmt.toString(), c));
@@ -271,10 +297,12 @@ public class Interpreter {
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>(); 
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex12.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("12", stmt.toString(), c));
@@ -294,10 +322,12 @@ public class Interpreter {
         stmt.typecheck(typeEnv);
         MyIStack <IStmt> stk = new MyStack<IStmt>();
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();  
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex13.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("13", stmt.toString(), c));
@@ -312,10 +342,12 @@ public class Interpreter {
         stmt.typecheck(typeEnv);
         MyIStack <IStmt> stk = new MyStack<IStmt>();
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex14.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("14", stmt.toString(), c));
@@ -334,10 +366,12 @@ public class Interpreter {
         stmt.typecheck(typeEnv);
         MyIStack <IStmt> stk = new MyStack<IStmt>();
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
-        MyIList <Value> out = new MyList < Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl);         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex15.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("15", stmt.toString(), c));
@@ -354,13 +388,49 @@ public class Interpreter {
         stmt.typecheck(typeEnv);
         MyIStack <IStmt> stk = new MyStack<IStmt>();
         MyIDict <String, Value> symtbl = new MyDict <String, Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl); 
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
-        MyIHeap < Value > heap = new MyHeap<Value>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt);
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex16.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("16", stmt.toString(), c));
+    }
+
+    public static void createExample17() throws MyException, IOException {
+        MyIProcTable < Procedure > procs = new MyProcTable<Procedure>();
+        Procedure p1 = new Procedure(new CompStmt(new AssignStmt("v", new ArithExp('+', 
+        new VarExp("a"), new VarExp("b"))), new PrintStmt(new VarExp("v"))), 
+        new ArrayList<String>(List.of("a", "b")));
+        procs.addProcedure("sum", p1);
+        Procedure p2 = new Procedure(new CompStmt(new AssignStmt("v", new ArithExp('*', 
+        new VarExp("a"), new VarExp("b"))), new PrintStmt(new VarExp("v"))), 
+        new ArrayList<String>(List.of("a", "b")));
+        procs.addProcedure("product", p2);
+        IStmt stmt = new CompStmt(new VarDeclStmt("v", new IntType()), 
+        new CompStmt(new VarDeclStmt("w", new IntType()), 
+        new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(2))), 
+        new CompStmt(new AssignStmt("w", new ValueExp(new IntValue(5))), 
+        new CompStmt(new CallFuncStmt("sum", new ArrayList<Exp>(List.of(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))), new VarExp("w")))),
+        new CompStmt(new PrintStmt(new VarExp("v")), 
+        new CompStmt(new ForkStmt(new CallFuncStmt("product", new ArrayList<Exp>(List.of(new VarExp("v"), new VarExp("w"))))), 
+        new ForkStmt(new CallFuncStmt("sum", new ArrayList<Exp>(List.of(new VarExp("v"), new VarExp("w"))))))))))));
+        MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
+        stmt.typecheck(typeEnv);
+        MyIStack <IStmt> stk = new MyStack<IStmt>();
+        MyIDict <String, Value> symtbl = new MyDict <String, Value >();
+        MyIStack < MyIDict <String, Value> > symtblstk = new MyStack<MyIDict <String, Value>>();
+        symtblstk.push(symtbl); 
+        MyIList <Value> out = new MyList < Value >();
+        MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
+        MyIHeap < Value > heap = new MyHeap<Value>();
+        PrgState PrgState = new PrgState(stk, symtblstk, out, filetbl, heap, stmt, procs);
+        IRepo r = new Repo(PrgState, "src/main/java/files/ex17.out");
+        Controller c = new Controller(r);
+        tm.addCommand(new RunExample("17", stmt.toString(), c));
     }
 
     public TextMenu getMenu() {

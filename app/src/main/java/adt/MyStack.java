@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
-public class MyStack<T> implements MyIStack < T > {
+public class MyStack < T > implements MyIStack < T > {
     
     private Stack < T > stack;
     public MyStack() {
@@ -15,6 +15,11 @@ public class MyStack<T> implements MyIStack < T > {
     @Override
     public T pop() {
         return this.stack.pop();
+    }
+
+    @Override
+    public T top() {
+        return this.stack.peek();
     }
 
     @Override
@@ -63,5 +68,22 @@ public class MyStack<T> implements MyIStack < T > {
 
     public void setStack(Stack < T > stack) {
         this.stack = stack;
+    }
+
+    @Override
+    public void copyContent(Stack < T > s) {
+        Stack < T > k = new Stack<T>();
+        while (!s.empty()) {
+            k.add(s.pop());
+        }
+        while (!k.empty()) {
+            s.add(k.firstElement());
+            stack.add(k.pop());
+        }
+    }
+
+    @Override
+    public Stack < T > getContent() {
+        return stack;
     }
 }

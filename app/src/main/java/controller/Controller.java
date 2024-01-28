@@ -11,7 +11,9 @@ import java.util.concurrent.Executors;
 
 import adt.MyIStack;
 import adt.MyIList;
+import adt.MyIProcTable;
 import adt.PrgState;
+import adt.Procedure;
 import exc.EndOfProgramException;
 import repo.IRepo;
 import stmt.IStmt;
@@ -54,6 +56,10 @@ public class Controller {
 
     public List < PrgState > getPrgList() {
         return repo.getPrgList();
+    }
+
+    public MyIProcTable < Procedure > getProcs() throws RepoStateException {
+        return repo.getPrg().getProcedures();
     }
 
     public PrgState crtState() throws MyException{

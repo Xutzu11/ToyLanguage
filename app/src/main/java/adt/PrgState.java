@@ -12,19 +12,21 @@ public class PrgState{
     private static int nextId = 0;
     private int id;
     private MyIStack < IStmt > exeStack;
-    private MyIDict < String, Value > symTable;
+    private MyIStack < MyIDict < String, Value > > symTablesStack;
     private MyIList < Value > out;
     private MyIFileTable < StringValue, BufferedReader > fileTable;
     private MyIHeap < Value > heap;
+    private MyIProcTable < Procedure > procTable; 
     // private IStmt originalProgram; //optional field, but good to have
     
-    public PrgState(MyIStack < IStmt > stk, MyIDict < String, Value > symtbl, MyIList < Value >
-            ot, MyIFileTable < StringValue, BufferedReader > ftb, MyIHeap < Value > heap, IStmt prg){
+    public PrgState(MyIStack < IStmt > stk, MyIStack < MyIDict < String, Value > > symtblstk, MyIList < Value >
+            ot, MyIFileTable < StringValue, BufferedReader > ftb, MyIHeap < Value > heap, IStmt prg, MyIProcTable < Procedure > procTable){
         exeStack = stk;
-        symTable = symtbl;
+        symTablesStack = symtblstk;
         out = ot;
         fileTable = ftb;
         this.heap = heap;
+        this.procTable = procTable;
         id = getNextId();
         /// originalProgram = deepCopy(prg);
         stk.push(prg);
@@ -47,6 +49,10 @@ public class PrgState{
         return heap;
     }
 
+    public MyIProcTable < Procedure > getProcedures() {
+        return procTable;
+    }
+
     public void setHeap(MyIHeap < Value > heap) {
         this.heap = heap;
     }
@@ -59,12 +65,16 @@ public class PrgState{
         this.exeStack = exeStack;
     }
 
-    public MyIDict<String, Value> getSymTable() {
-        return symTable;
+    public MyIStack < MyIDict <String, Value> > getSymTableStack() {
+        return symTablesStack;
     }
 
-    public void setSymTable(MyIDict<String, Value> symTable) {
-        this.symTable = symTable;
+    public MyIDict <String, Value> getSymTable() {
+        return symTablesStack.top();
+    }
+
+    public void addSymTable(MyIDict<String, Value> symTable) {
+        this.symTablesStack.push(symTable);
     }
 
     public MyIList<Value> getOut() {
@@ -89,7 +99,7 @@ public class PrgState{
     public String toString() {
         return "PrgState {" +
                 "\n   exeStack = " + exeStack.getReversed() +
-                "\n   symTable = " + symTable +
+                "\n   symTable = " + symTablesStack.top() +
                 "\n   out = " + out +
                 "}\n";
     }
@@ -106,7 +116,7 @@ public class PrgState{
         rez += "ExeStack:\n";
         rez += this.exeStack.fileString();
         rez += "SymTable:\n";
-        rez += this.symTable.fileString();
+        rez += this.symTablesStack.top().fileString();
         rez += "Out:\n";
         rez += this.out.fileString();
         rez += "FileTable:\n";

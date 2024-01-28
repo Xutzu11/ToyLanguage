@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 import adt.PrgState;
+import adt.Procedure;
 import controller.Controller;
 import exc.MyException;
 import exc.RepoStateException;
@@ -40,6 +41,9 @@ public class PrimaryController {
     @FXML private TableView < SymEntry > symTable;
     @FXML private TableColumn < SymEntry, String > variableSym;
     @FXML private TableColumn < SymEntry, String > valueSym;
+    @FXML private TableView < ProcEntry > procTable;
+    @FXML private TableColumn < ProcEntry, String > headerProc;
+    @FXML private TableColumn < ProcEntry, String > bodyProc;
     private PrgState selectedState;
 
     public void setContr(Controller c) {
@@ -71,6 +75,11 @@ public class PrimaryController {
         variableSym.setCellValueFactory(new PropertyValueFactory<>("variable"));
         valueSym.setCellValueFactory(new PropertyValueFactory<>("value"));
         symTable.getColumns().addAll(variableSym, valueSym);
+
+        procTable.getColumns().clear();
+        headerProc.setCellValueFactory(new PropertyValueFactory<>("header"));
+        bodyProc.setCellValueFactory(new PropertyValueFactory<>("body"));
+        procTable.getColumns().addAll(headerProc, bodyProc);
     }
 
     public void getSelection(String stmt) {
@@ -141,6 +150,15 @@ public class PrimaryController {
         }
     }
 
+    public void updateProc() throws RepoStateException {
+        procTable.getItems().clear();
+        if (mainContr.programEnded()) return;
+        Map < String, Procedure > procs = mainContr.getProcs().getContent();
+        for (Map.Entry<String, Procedure > k:procs.entrySet()) {
+            procTable.getItems().add(new ProcEntry(k.getKey(), k.getValue().vars, k.getValue().stmt));
+        }
+    }
+
     public void triggerAlert(String s) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error!");
@@ -158,6 +176,7 @@ public class PrimaryController {
             updateFiles();
             updateOutput();
             updatePrgStates();
+            updateProc();
         }
         catch (MyException e) {
             triggerAlert(e.getMessage());

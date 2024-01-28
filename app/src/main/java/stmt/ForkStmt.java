@@ -19,11 +19,11 @@ public class ForkStmt implements IStmt{
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        MyIDict < String, Value > newSymTbl = new MyDict<String, Value>();
+        MyIStack < MyIDict < String, Value > > newSymTblStk = new MyStack<MyIDict<String, Value>>();
         MyIStack < IStmt > newExeStack = new MyStack<IStmt>();
-        newSymTbl.copyContent(state.getSymTable().getContent());
-        PrgState newState = new PrgState(newExeStack, newSymTbl, state.getOut(), 
-                                state.getFileTable(), state.getHeap(), stmt);
+        newSymTblStk.copyContent(state.getSymTableStack().getContent());
+        PrgState newState = new PrgState(newExeStack, newSymTblStk, state.getOut(), 
+                                state.getFileTable(), state.getHeap(), stmt, state.getProcedures());
         return newState;
     }
 

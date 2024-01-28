@@ -1,0 +1,817 @@
+PrgState:
+17
+ExeStack:
+(int v;(int w;(v=2;(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,)))))))))
+SymTable:
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+int v;
+(int w;(v=2;(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))))))
+SymTable:
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+int v;
+(int w;(v=2;(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))))))
+SymTable:
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(int w;(v=2;(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))))))
+SymTable:
+v -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(int w;(v=2;(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))))))
+SymTable:
+v -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+int w;
+(v=2;(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,)))))))
+SymTable:
+v -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+int w;
+(v=2;(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,)))))))
+SymTable:
+v -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(v=2;(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,)))))))
+SymTable:
+v -> 0
+w -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(v=2;(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,)))))))
+SymTable:
+v -> 0
+w -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+v=2;
+(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))))
+SymTable:
+v -> 0
+w -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+v=2;
+(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))))
+SymTable:
+v -> 0
+w -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))))
+SymTable:
+v -> 2
+w -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(w=5;(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))))
+SymTable:
+v -> 2
+w -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+w=5;
+(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,)))))
+SymTable:
+v -> 2
+w -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+w=5;
+(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,)))))
+SymTable:
+v -> 2
+w -> 0
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,)))))
+SymTable:
+v -> 2
+w -> 5
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(call sum(v*10,w,)(print(v);(fork(call product(v,w,))fork(call sum(v,w,)))))
+SymTable:
+v -> 2
+w -> 5
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+call sum(v*10,w,)
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+v -> 2
+w -> 5
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+call sum(v*10,w,)
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+v -> 2
+w -> 5
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(v=a+b;print(v);)
+return;
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+a -> 20
+b -> 5
+v -> 2
+w -> 5
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(v=a+b;print(v);)
+return;
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+a -> 20
+b -> 5
+v -> 2
+w -> 5
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+v=a+b;
+print(v);
+return;
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+a -> 20
+b -> 5
+v -> 2
+w -> 5
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+v=a+b;
+print(v);
+return;
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+a -> 20
+b -> 5
+v -> 2
+w -> 5
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+print(v);
+return;
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+a -> 20
+b -> 5
+v -> 25
+w -> 5
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+print(v);
+return;
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+a -> 20
+b -> 5
+v -> 25
+w -> 5
+Out:
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+return;
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+a -> 20
+b -> 5
+v -> 25
+w -> 5
+Out:
+25
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+return;
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+a -> 20
+b -> 5
+v -> 25
+w -> 5
+Out:
+25
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(print(v);(fork(call product(v,w,))fork(call sum(v,w,))))
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+print(v);
+(fork(call product(v,w,))fork(call sum(v,w,)))
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+print(v);
+(fork(call product(v,w,))fork(call sum(v,w,)))
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(fork(call product(v,w,))fork(call sum(v,w,)))
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+(fork(call product(v,w,))fork(call sum(v,w,)))
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+fork(call product(v,w,))
+fork(call sum(v,w,))
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+fork(call product(v,w,))
+fork(call sum(v,w,))
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+fork(call sum(v,w,))
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+call product(v,w,)
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+fork(call sum(v,w,))
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+call product(v,w,)
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+17
+ExeStack:
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+(v=a*b;print(v);)
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+call sum(v,w,)
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+(v=a*b;print(v);)
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+call sum(v,w,)
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+v=a*b;
+print(v);
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+(v=a+b;print(v);)
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+v=a*b;
+print(v);
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+(v=a+b;print(v);)
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+print(v);
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 10
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+v=a+b;
+print(v);
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+print(v);
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 10
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+v=a+b;
+print(v);
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+Out:
+25
+2
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 10
+w -> 5
+Out:
+25
+2
+10
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+print(v);
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 7
+w -> 5
+Out:
+25
+2
+10
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 10
+w -> 5
+Out:
+25
+2
+10
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+print(v);
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 7
+w -> 5
+Out:
+25
+2
+10
+FileTable:
+Heap:
+
+PrgState:
+18
+ExeStack:
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+10
+7
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 7
+w -> 5
+Out:
+25
+2
+10
+7
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+return;
+SymTable:
+a -> 2
+b -> 5
+v -> 7
+w -> 5
+Out:
+25
+2
+10
+7
+FileTable:
+Heap:
+
+PrgState:
+19
+ExeStack:
+SymTable:
+v -> 2
+w -> 5
+Out:
+25
+2
+10
+7
+FileTable:
+Heap:
+

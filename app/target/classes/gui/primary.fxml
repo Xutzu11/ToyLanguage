@@ -87,6 +87,21 @@
             </VBox>
          </children>
       </HBox>
+      <VBox prefHeight="149.0" prefWidth="658.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="15.0" prefWidth="658.0" text="Procedures table" textAlignment="CENTER">
+               <font>
+                  <Font name="Constantia" size="13.0" />
+               </font>
+            </Label>
+            <TableView fx:id="procTable" prefHeight="176.0" prefWidth="658.0">
+               <columns>
+                  <TableColumn fx:id="headerProc" prefWidth="300.0" text="Header" />
+                  <TableColumn fx:id="bodyProc" prefWidth="358.0" text="Body" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
       <Button mnemonicParsing="false" onMouseClicked="#runStep" text="Run one step" />
    </children>
 </VBox>
