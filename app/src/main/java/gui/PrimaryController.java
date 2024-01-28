@@ -41,10 +41,10 @@ public class PrimaryController {
     @FXML private TableView < SymEntry > symTable;
     @FXML private TableColumn < SymEntry, String > variableSym;
     @FXML private TableColumn < SymEntry, String > valueSym;
-    @FXML private TableView < SemaphoreEntry > semaphoreTable;
-    @FXML private TableColumn < SemaphoreEntry, String > indexSem;
-    @FXML private TableColumn < SemaphoreEntry, String > valueSem;
-    @FXML private TableColumn < SemaphoreEntry, String > listOfValuesSem;
+    @FXML private TableView < BarrierEntry > barrierTable;
+    @FXML private TableColumn < BarrierEntry, String > indexSem;
+    @FXML private TableColumn < BarrierEntry, String > valueSem;
+    @FXML private TableColumn < BarrierEntry, String > listOfValuesSem;
 
     private PrgState selectedState;
 
@@ -78,11 +78,11 @@ public class PrimaryController {
         valueSym.setCellValueFactory(new PropertyValueFactory<>("value"));
         symTable.getColumns().addAll(variableSym, valueSym);
 
-        semaphoreTable.getColumns().clear();
+        barrierTable.getColumns().clear();
         indexSem.setCellValueFactory(new PropertyValueFactory<>("index"));
         valueSem.setCellValueFactory(new PropertyValueFactory<>("value"));
         listOfValuesSem.setCellValueFactory(new PropertyValueFactory<>("listOfValues"));
-        semaphoreTable.getColumns().addAll(indexSem, valueSem, listOfValuesSem);
+        barrierTable.getColumns().addAll(indexSem, valueSem, listOfValuesSem);
     }
 
     public void getSelection(String stmt) {
@@ -153,12 +153,12 @@ public class PrimaryController {
         }
     }
 
-    public void updateSemaphore() throws MyException {
-        semaphoreTable.getItems().clear();
+    public void updateBarrier() throws MyException {
+        barrierTable.getItems().clear();
         if (mainContr.programEnded()) return;
-        Map < Integer, Pair > sem = mainContr.getSemaphore().getContent();
+        Map < Integer, Pair > sem = mainContr.getBarrier().getContent();
         for (Map.Entry<Integer, Pair > k:sem.entrySet()) {
-            semaphoreTable.getItems().add(new SemaphoreEntry(k.getKey(), k.getValue().first, k.getValue().second));
+            barrierTable.getItems().add(new BarrierEntry(k.getKey(), k.getValue().first, k.getValue().second));
         }
     }
 
@@ -179,7 +179,7 @@ public class PrimaryController {
             updateFiles();
             updateOutput();
             updatePrgStates();
-            updateSemaphore();
+            updateBarrier();
         }
         catch (MyException e) {
             triggerAlert(e.getMessage());

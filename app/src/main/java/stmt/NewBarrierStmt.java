@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 import adt.MyIDict;
-import adt.MyICountSemaphore;
+import adt.MyICyclicBarrier;
 import adt.PrgState;
 import adt.Pair;
 import exc.InvalidOperandException;
@@ -16,17 +16,17 @@ import type.*;
 import value.IntValue;
 import value.Value;
 
-public class NewSemaphoreStmt implements IStmt {
+public class NewBarrierStmt implements IStmt {
     private String var;
     private Exp e;
 
-    public NewSemaphoreStmt(String var, Exp e) {
+    public NewBarrierStmt(String var, Exp e) {
         this.var = var; this.e = e;
     }
 
     @Override
     public PrgState execute(PrgState state) throws MyException, IOException {
-        MyICountSemaphore < Pair > sem = state.getSemaphore();
+        MyICyclicBarrier < Pair > sem = state.getBarrier();
         MyIDict < String, Value > tbl = state.getSymTable();
         int n = ((IntValue)e.eval(state.getSymTable(), state.getHeap())).getVal();
         int newFreeAdr = sem.allocate(new Pair(n, new LinkedList<>()));
@@ -50,6 +50,6 @@ public class NewSemaphoreStmt implements IStmt {
 
     @Override
     public String toString() {
-        return "newSemaphore(" + var + "," + e.toString() + ")";
+        return "newBarrier(" + var + "," + e.toString() + ")";
     }
 }
