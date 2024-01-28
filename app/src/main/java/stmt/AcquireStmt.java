@@ -6,7 +6,7 @@ import value.IntValue;
 import value.Value;
 import adt.MyIDict;
 import adt.MyIStack;
-import adt.MyIToySemaphore;
+import adt.MyICountSemaphore;
 import adt.PrgState;
 import adt.Pair;
 import exc.InvalidMemoryAccess;
@@ -23,7 +23,7 @@ public class AcquireStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException, IOException {
         MyIDict < String, Value > tbl = state.getSymTable();
-        MyIToySemaphore < Pair > sem = state.getSemaphore();
+        MyICountSemaphore < Pair > sem = state.getSemaphore();
         MyIStack < IStmt > stk = state.getExeStack();
         int index = ((IntValue)tbl.lookUp(var)).getVal();
         if (!sem.isDefined(index)) throw new InvalidMemoryAccess();

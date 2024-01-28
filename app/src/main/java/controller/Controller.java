@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 
 
 import adt.MyIStack;
-import adt.MyIToySemaphore;
+import adt.MyICountSemaphore;
 import adt.MyIList;
 import adt.PrgState;
 import adt.Pair;
@@ -50,7 +50,7 @@ public class Controller {
         return finalOutput;
     }
 
-    public MyIToySemaphore < Pair > getSemaphore() throws MyException {
+    public MyICountSemaphore < Pair > getSemaphore() throws MyException {
         return repo.getPrg().getSemaphore();
     }
 

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 import adt.MyIDict;
-import adt.MyIToySemaphore;
+import adt.MyICountSemaphore;
 import adt.PrgState;
 import adt.Pair;
 import exc.InvalidOperandException;
@@ -26,7 +26,7 @@ public class NewSemaphoreStmt implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws MyException, IOException {
-        MyIToySemaphore < Pair > sem = state.getSemaphore();
+        MyICountSemaphore < Pair > sem = state.getSemaphore();
         MyIDict < String, Value > tbl = state.getSymTable();
         int n = ((IntValue)e.eval(state.getSymTable(), state.getHeap())).getVal();
         int newFreeAdr = sem.allocate(new Pair(n, new LinkedList<>()));
