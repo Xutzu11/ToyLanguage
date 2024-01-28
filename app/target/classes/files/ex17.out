@@ -1,1335 +1,2533 @@
 PrgState:
 17
 ExeStack:
-(Ref int v1;(int cnt;(new(v1,1)(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt)))))))))
+(Ref int v1;(Ref int v2;(int x;(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))))))))
 SymTable:
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
 Ref int v1;
-(int cnt;(new(v1,1)(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))))))
+(Ref int v2;(int x;(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))))))
 SymTable:
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
 Ref int v1;
-(int cnt;(new(v1,1)(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))))))
+(Ref int v2;(int x;(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))))))
 SymTable:
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
-(int cnt;(new(v1,1)(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))))))
+(Ref int v2;(int x;(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))))))
 SymTable:
 v1 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
-(int cnt;(new(v1,1)(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))))))
+(Ref int v2;(int x;(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))))))
 SymTable:
 v1 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
-int cnt;
-(new(v1,1)(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt)))))))
+Ref int v2;
+(int x;(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))))))
 SymTable:
 v1 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
-int cnt;
-(new(v1,1)(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt)))))))
+Ref int v2;
+(int x;(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))))))
 SymTable:
 v1 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
-(new(v1,1)(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt)))))))
+(int x;(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))))))
 SymTable:
-cnt -> 0
 v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
-(new(v1,1)(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt)))))))
+(int x;(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))))))
 SymTable:
-cnt -> 0
 v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
-new(v1,1)
-(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))))
+int x;
+(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))))
 SymTable:
-cnt -> 0
 v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
-new(v1,1)
-(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))))
+int x;
+(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))))
 SymTable:
-cnt -> 0
 v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
 
 PrgState:
 17
 ExeStack:
-(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))))
+(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))))
 SymTable:
-cnt -> 0
-v1 -> (1,int)
+x -> 0
+v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
-1 -> 1
 
 PrgState:
 17
 ExeStack:
-(newSemaphore(cnt,rH(v1))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))))
+(int q;(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))))
 SymTable:
-cnt -> 0
-v1 -> (1,int)
+x -> 0
+v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
-1 -> 1
 
 PrgState:
 17
 ExeStack:
-newSemaphore(cnt,rH(v1))
-(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt)))))
+int q;
+(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))))
 SymTable:
-cnt -> 0
-v1 -> (1,int)
+x -> 0
+v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
-1 -> 1
 
 PrgState:
 17
 ExeStack:
-newSemaphore(cnt,rH(v1))
-(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt)))))
+int q;
+(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))))
 SymTable:
-cnt -> 0
-v1 -> (1,int)
+x -> 0
+v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
+LockTable:
 Heap:
-1 -> 1
 
 PrgState:
 17
 ExeStack:
-(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt)))))
+(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))))
 SymTable:
-cnt -> 1
-v1 -> (1,int)
+q -> 0
+x -> 0
+v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
 Heap:
-1 -> 1
 
 PrgState:
 17
 ExeStack:
-(fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt)))))
+(new(v1,20)(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))))
 SymTable:
-cnt -> 1
-v1 -> (1,int)
+q -> 0
+x -> 0
+v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
 Heap:
-1 -> 1
 
 PrgState:
 17
 ExeStack:
-fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))
-(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))
+new(v1,20)
+(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))
 SymTable:
-cnt -> 1
-v1 -> (1,int)
+q -> 0
+x -> 0
+v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
 Heap:
-1 -> 1
 
 PrgState:
 17
 ExeStack:
-fork((acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))))
-(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))
+new(v1,20)
+(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))
 SymTable:
-cnt -> 1
-v1 -> (1,int)
+q -> 0
+x -> 0
+v1 -> (0,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
 Heap:
-1 -> 1
 
 PrgState:
 17
 ExeStack:
-(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))
+(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))
 SymTable:
-cnt -> 1
+q -> 0
+x -> 0
 v1 -> (1,int)
+v2 -> (0,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
 Heap:
-1 -> 1
+1 -> 20
+
+PrgState:
+17
+ExeStack:
+(new(v2,30)(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))))
+SymTable:
+q -> 0
+x -> 0
+v1 -> (1,int)
+v2 -> (0,int)
+Out:
+FileTable:
+LockTable:
+Heap:
+1 -> 20
+
+PrgState:
+17
+ExeStack:
+new(v2,30)
+(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))
+SymTable:
+q -> 0
+x -> 0
+v1 -> (1,int)
+v2 -> (0,int)
+Out:
+FileTable:
+LockTable:
+Heap:
+1 -> 20
+
+PrgState:
+17
+ExeStack:
+new(v2,30)
+(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))
+SymTable:
+q -> 0
+x -> 0
+v1 -> (1,int)
+v2 -> (0,int)
+Out:
+FileTable:
+LockTable:
+Heap:
+1 -> 20
+
+PrgState:
+17
+ExeStack:
+(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))
+SymTable:
+q -> 0
+x -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+(newLock(x)(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))))
+SymTable:
+q -> 0
+x -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+newLock(x)
+(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))
+SymTable:
+q -> 0
+x -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+newLock(x)
+(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))
+SymTable:
+q -> 0
+x -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))
+SymTable:
+q -> 0
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+(fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))))
+SymTable:
+q -> 0
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))
+(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))
+SymTable:
+q -> 0
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+fork((fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x)))))
+(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))
+SymTable:
+q -> 0
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))
+SymTable:
+q -> 0
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+Heap:
+1 -> 20
+2 -> 30
 
 PrgState:
 18
 ExeStack:
-(acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt))))
+(fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x))))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 17
 ExeStack:
-(fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))(acquire(cnt)(print(rH(v1)-1);release(cnt))))
+(newLock(q)(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))))
 SymTable:
-cnt -> 1
+q -> 0
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 18
 ExeStack:
-(acquire(cnt)(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt))))
+(fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))(lock(x)(wH(v1,rH(v1)*10)unlock(x))))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 17
 ExeStack:
-fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))
-(acquire(cnt)(print(rH(v1)-1);release(cnt)))
+newLock(q)
+(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))
 SymTable:
-cnt -> 1
+q -> 0
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 18
 ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))
+fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))
+(lock(x)(wH(v1,rH(v1)*10)unlock(x)))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 17
 ExeStack:
-fork((acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))))
-(acquire(cnt)(print(rH(v1)-1);release(cnt)))
+newLock(q)
+(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))
 SymTable:
-cnt -> 1
+q -> 0
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 18
 ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))
+fork((lock(x)(wH(v1,rH(v1)-1)unlock(x))))
+(lock(x)(wH(v1,rH(v1)*10)unlock(x)))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 17
 ExeStack:
-(acquire(cnt)(print(rH(v1)-1);release(cnt)))
+(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 18
 ExeStack:
-(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))
+(lock(x)(wH(v1,rH(v1)*10)unlock(x)))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 19
 ExeStack:
-(acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt)))))
+(lock(x)(wH(v1,rH(v1)-1)unlock(x)))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 17
 ExeStack:
-(acquire(cnt)(print(rH(v1)-1);release(cnt)))
+(fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 18
 ExeStack:
-(wH(v1,rH(v1)*10)(print(rH(v1));release(cnt)))
+(lock(x)(wH(v1,rH(v1)*10)unlock(x)))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 19
 ExeStack:
-(acquire(cnt)(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt)))))
+(lock(x)(wH(v1,rH(v1)-1)unlock(x)))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
 
 PrgState:
 17
 ExeStack:
-acquire(cnt)
-(print(rH(v1)-1);release(cnt))
+fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))
+(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 1
+1 -> 20
+2 -> 30
+
+PrgState:
+18
+ExeStack:
+lock(x)
+(wH(v1,rH(v1)*10)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+19
+ExeStack:
+lock(x)
+(wH(v1,rH(v1)-1)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+fork((fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q)))))
+(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+18
+ExeStack:
+lock(x)
+(wH(v1,rH(v1)*10)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+19
+ExeStack:
+lock(x)
+(wH(v1,rH(v1)-1)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+18
+ExeStack:
+lock(x)
+(wH(v1,rH(v1)*10)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+19
+ExeStack:
+(wH(v1,rH(v1)-1)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+20
+ExeStack:
+(fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q))))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+(nop;(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+18
+ExeStack:
+lock(x)
+(wH(v1,rH(v1)*10)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+19
+ExeStack:
+(wH(v1,rH(v1)-1)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+20
+ExeStack:
+(fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))(lock(q)(wH(v2,rH(v2)*10)unlock(q))))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+nop;
+(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+18
+ExeStack:
+lock(x)
+(wH(v1,rH(v1)*10)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+19
+ExeStack:
+wH(v1,rH(v1)-1)
+unlock(x)
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+20
+ExeStack:
+fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))
+(lock(q)(wH(v2,rH(v2)*10)unlock(q)))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+nop;
+(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+18
+ExeStack:
+lock(x)
+(wH(v1,rH(v1)*10)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+19
+ExeStack:
+wH(v1,rH(v1)-1)
+unlock(x)
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+20
+ExeStack:
+fork((lock(q)(wH(v2,rH(v2)+5)unlock(q))))
+(lock(q)(wH(v2,rH(v2)*10)unlock(q)))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 20
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+18
+ExeStack:
+lock(x)
+(wH(v1,rH(v1)*10)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+19
+ExeStack:
+unlock(x)
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+20
+ExeStack:
+(lock(q)(wH(v2,rH(v2)*10)unlock(q)))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+21
+ExeStack:
+(lock(q)(wH(v2,rH(v2)+5)unlock(q)))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+(nop;(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+18
+ExeStack:
+lock(x)
+(wH(v1,rH(v1)*10)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+19
+ExeStack:
+unlock(x)
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+20
+ExeStack:
+(lock(q)(wH(v2,rH(v2)*10)unlock(q)))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+21
+ExeStack:
+(lock(q)(wH(v2,rH(v2)+5)unlock(q)))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 19
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+nop;
+(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+18
+ExeStack:
+(wH(v1,rH(v1)*10)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+19
+ExeStack:
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+20
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)*10)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+21
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+nop;
+(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+18
+ExeStack:
+(wH(v1,rH(v1)*10)unlock(x))
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+20
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)*10)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+21
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> -1
+Heap:
+1 -> 19
+2 -> 30
+
+PrgState:
+17
+ExeStack:
+(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> 20
+Heap:
+1 -> 19
+2 -> 30
 
 PrgState:
 18
 ExeStack:
 wH(v1,rH(v1)*10)
-(print(rH(v1));release(cnt))
+unlock(x)
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 1
+1 -> 19
+2 -> 30
 
 PrgState:
-19
+20
 ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
+(wH(v2,rH(v2)*10)unlock(q))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 2
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 1
+1 -> 19
+2 -> 30
+
+PrgState:
+21
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> 20
+Heap:
+1 -> 19
+2 -> 30
 
 PrgState:
 17
 ExeStack:
-acquire(cnt)
-(print(rH(v1)-1);release(cnt))
+(nop;(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 1
+1 -> 19
+2 -> 30
 
 PrgState:
 18
 ExeStack:
 wH(v1,rH(v1)*10)
-(print(rH(v1));release(cnt))
+unlock(x)
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 1
+1 -> 19
+2 -> 30
 
 PrgState:
-19
+20
 ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
+(wH(v2,rH(v2)*10)unlock(q))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 2
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 1
+1 -> 19
+2 -> 30
+
+PrgState:
+21
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> 20
+Heap:
+1 -> 19
+2 -> 30
 
 PrgState:
 17
 ExeStack:
-acquire(cnt)
-(print(rH(v1)-1);release(cnt))
+nop;
+(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 10
+1 -> 190
+2 -> 30
 
 PrgState:
 18
 ExeStack:
-(print(rH(v1));release(cnt))
+unlock(x)
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 10
+1 -> 190
+2 -> 30
 
 PrgState:
-19
+20
 ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
+wH(v2,rH(v2)*10)
+unlock(q)
 SymTable:
-cnt -> 1
+x -> 1
+q -> 2
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 10
+1 -> 190
+2 -> 30
+
+PrgState:
+21
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> 20
+Heap:
+1 -> 190
+2 -> 30
 
 PrgState:
 17
 ExeStack:
-acquire(cnt)
-(print(rH(v1)-1);release(cnt))
+nop;
+(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 10
+1 -> 190
+2 -> 30
 
 PrgState:
 18
 ExeStack:
-(print(rH(v1));release(cnt))
+unlock(x)
 SymTable:
-cnt -> 1
+x -> 1
+q -> 0
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 10
+1 -> 190
+2 -> 30
 
 PrgState:
-19
+20
 ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
+wH(v2,rH(v2)*10)
+unlock(q)
 SymTable:
-cnt -> 1
+x -> 1
+q -> 2
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 18
+2 -> 20
 Heap:
-1 -> 10
+1 -> 190
+2 -> 30
+
+PrgState:
+21
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 18
+2 -> 20
+Heap:
+1 -> 190
+2 -> 30
 
 PrgState:
 17
 ExeStack:
-acquire(cnt)
-(print(rH(v1)-1);release(cnt))
+(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> 20
 Heap:
-1 -> 10
+1 -> 190
+2 -> 300
 
 PrgState:
 18
+ExeStack:
+SymTable:
+x -> 1
+q -> 0
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 20
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+20
+ExeStack:
+unlock(q)
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 20
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+21
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 20
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+17
+ExeStack:
+(nop;(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 20
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+20
+ExeStack:
+unlock(q)
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 20
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+21
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 20
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+17
+ExeStack:
+nop;
+(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> -1
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+20
+ExeStack:
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> -1
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+21
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> -1
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+17
+ExeStack:
+nop;
+(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> -1
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+21
+ExeStack:
+lock(q)
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> -1
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+17
+ExeStack:
+(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 21
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+21
+ExeStack:
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 21
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+17
+ExeStack:
+(lock(x)(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q))))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 21
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+21
+ExeStack:
+(wH(v2,rH(v2)+5)unlock(q))
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 21
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+17
+ExeStack:
+lock(x)
+(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 21
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+21
+ExeStack:
+wH(v2,rH(v2)+5)
+unlock(q)
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 21
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+17
+ExeStack:
+lock(x)
+(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 21
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+21
+ExeStack:
+wH(v2,rH(v2)+5)
+unlock(q)
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> -1
+2 -> 21
+Heap:
+1 -> 190
+2 -> 300
+
+PrgState:
+17
+ExeStack:
+(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 17
+2 -> 21
+Heap:
+1 -> 190
+2 -> 305
+
+PrgState:
+21
+ExeStack:
+unlock(q)
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 17
+2 -> 21
+Heap:
+1 -> 190
+2 -> 305
+
+PrgState:
+17
+ExeStack:
+(print(rH(v1));(unlock(x)(lock(q)(print(rH(v1));unlock(q)))))
+SymTable:
+q -> 2
+x -> 1
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 17
+2 -> 21
+Heap:
+1 -> 190
+2 -> 305
+
+PrgState:
+21
+ExeStack:
+unlock(q)
+SymTable:
+x -> 1
+q -> 2
+v1 -> (1,int)
+v2 -> (2,int)
+Out:
+FileTable:
+LockTable:
+1 -> 17
+2 -> 21
+Heap:
+1 -> 190
+2 -> 305
+
+PrgState:
+17
 ExeStack:
 print(rH(v1));
-release(cnt)
+(unlock(x)(lock(q)(print(rH(v1));unlock(q))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 17
+2 -> -1
 Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
-19
+21
 ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
 SymTable:
-cnt -> 1
+x -> 1
+q -> 2
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 17
+2 -> -1
 Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
-ExeStack:
-acquire(cnt)
-(print(rH(v1)-1);release(cnt))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
-
-PrgState:
-18
 ExeStack:
 print(rH(v1));
-release(cnt)
+(unlock(x)(lock(q)(print(rH(v1));unlock(q))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 17
+2 -> -1
 Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
 ExeStack:
-acquire(cnt)
-(print(rH(v1)-1);release(cnt))
+(unlock(x)(lock(q)(print(rH(v1));unlock(q))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 17
+2 -> -1
 Heap:
-1 -> 10
-
-PrgState:
-18
-ExeStack:
-release(cnt)
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
 ExeStack:
-acquire(cnt)
-(print(rH(v1)-1);release(cnt))
+(unlock(x)(lock(q)(print(rH(v1));unlock(q))))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 17
+2 -> -1
 Heap:
-1 -> 10
-
-PrgState:
-18
-ExeStack:
-release(cnt)
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
 ExeStack:
-acquire(cnt)
-(print(rH(v1)-1);release(cnt))
+unlock(x)
+(lock(q)(print(rH(v1));unlock(q)))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 17
+2 -> -1
 Heap:
-1 -> 10
-
-PrgState:
-18
-ExeStack:
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
 ExeStack:
-acquire(cnt)
-(print(rH(v1)-1);release(cnt))
+unlock(x)
+(lock(q)(print(rH(v1));unlock(q)))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> 17
+2 -> -1
 Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
 ExeStack:
-(print(rH(v1)-1);release(cnt))
+(lock(q)(print(rH(v1));unlock(q)))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
 ExeStack:
-(print(rH(v1)-1);release(cnt))
+(lock(q)(print(rH(v1));unlock(q)))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
 ExeStack:
-print(rH(v1)-1);
-release(cnt)
+lock(q)
+(print(rH(v1));unlock(q))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
 ExeStack:
-print(rH(v1)-1);
-release(cnt)
+lock(q)
+(print(rH(v1));unlock(q))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
 ExeStack:
-release(cnt)
+(print(rH(v1));unlock(q))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
-9
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> 17
 Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
 ExeStack:
-release(cnt)
+(print(rH(v1));unlock(q))
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
-9
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> 17
 Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-acquire(cnt)
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
+1 -> 190
+2 -> 305
 
 PrgState:
 17
-ExeStack:
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-(wH(v1,rH(v1)*10)(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt))))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-wH(v1,rH(v1)*10)
-(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt)))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-wH(v1,rH(v1)*10)
-(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt)))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 10
-
-PrgState:
-19
-ExeStack:
-(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt)))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 100
-
-PrgState:
-19
-ExeStack:
-(wH(v1,rH(v1)*2)(print(rH(v1));release(cnt)))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 100
-
-PrgState:
-19
-ExeStack:
-wH(v1,rH(v1)*2)
-(print(rH(v1));release(cnt))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 100
-
-PrgState:
-19
-ExeStack:
-wH(v1,rH(v1)*2)
-(print(rH(v1));release(cnt))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 100
-
-PrgState:
-19
-ExeStack:
-(print(rH(v1));release(cnt))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 200
-
-PrgState:
-19
-ExeStack:
-(print(rH(v1));release(cnt))
-SymTable:
-cnt -> 1
-v1 -> (1,int)
-Out:
-10
-9
-FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
-Heap:
-1 -> 200
-
-PrgState:
-19
 ExeStack:
 print(rH(v1));
-release(cnt)
+unlock(q)
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
-9
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> 17
 Heap:
-1 -> 200
+1 -> 190
+2 -> 305
 
 PrgState:
-19
+17
 ExeStack:
 print(rH(v1));
-release(cnt)
+unlock(q)
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
-9
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> 17
 Heap:
-1 -> 200
+1 -> 190
+2 -> 305
 
 PrgState:
-19
+17
 ExeStack:
-release(cnt)
+unlock(q)
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
-9
-200
+190
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> 17
 Heap:
-1 -> 200
+1 -> 190
+2 -> 305
 
 PrgState:
-19
+17
 ExeStack:
-release(cnt)
+unlock(q)
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
-9
-200
+190
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> 17
 Heap:
-1 -> 200
+1 -> 190
+2 -> 305
 
 PrgState:
-19
+17
 ExeStack:
 SymTable:
-cnt -> 1
+q -> 2
+x -> 1
 v1 -> (1,int)
+v2 -> (2,int)
 Out:
-10
-9
-200
+190
+190
 FileTable:
-Semaphore:
-1 -> adt.Pair@5fa0f938
+LockTable:
+1 -> -1
+2 -> -1
 Heap:
-1 -> 200
+1 -> 190
+2 -> 305
 

@@ -85,18 +85,17 @@
                   <ListView fx:id="fileTable" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </VBox>
-            <VBox prefHeight="149.0" prefWidth="280.0">
+            <VBox prefHeight="149.0" prefWidth="160.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="303.0" text="Semaphore table">
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="160.0" text="Lock table">
                      <font>
                         <Font name="Constantia" size="13.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="semaphoreTable" prefHeight="133.0" prefWidth="280">
+                  <TableView fx:id="lockTable" prefHeight="133.0" prefWidth="280">
                      <columns>
-                        <TableColumn fx:id="indexSem" prefWidth="80" text="Index" />
-                        <TableColumn fx:id="valueSem" prefWidth="80" text="Value" />
-                        <TableColumn fx:id="listOfValuesSem" prefWidth="120" text="ListOfValues" />
+                        <TableColumn fx:id="locationLock" prefWidth="80" text="Location" />
+                        <TableColumn fx:id="valueLock" prefWidth="80" text="Value" />
                      </columns>
                   </TableView>
                </children>

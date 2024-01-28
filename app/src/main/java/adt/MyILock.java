@@ -2,7 +2,7 @@ package adt;
 
 import java.util.Map;
 
-public interface MyICountSemaphore < T > {
+public interface MyILock < T > {
     int allocate(T value);
     T lookup(int address);
     void update(int address, T value);

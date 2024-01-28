@@ -6,32 +6,29 @@ import value.IntValue;
 import value.Value;
 import adt.MyIDict;
 import adt.MyIStack;
-import adt.MyICountSemaphore;
+import adt.MyILock;
 import adt.PrgState;
-import adt.Pair;
 import exc.InvalidMemoryAccess;
 import exc.InvalidOperandException;
 import exc.MyException;
 
-public class AcquireStmt implements IStmt {
+public class LockStmt implements IStmt {
     private String var;
 
-    public AcquireStmt(String var) {
+    public LockStmt(String var) {
         this.var = var;
     }
 
     @Override
     public PrgState execute(PrgState state) throws MyException, IOException {
         MyIDict < String, Value > tbl = state.getSymTable();
-        MyICountSemaphore < Pair > sem = state.getSemaphore();
+        MyILock < Integer > lock = state.getLock();
         MyIStack < IStmt > stk = state.getExeStack();
-        int index = ((IntValue)tbl.lookUp(var)).getVal();
-        if (!sem.isDefined(index)) throw new InvalidMemoryAccess();
-        Pair t = sem.lookup(index);
-        if (t.first > t.second.size()) {
-            if (!t.second.contains(state.getId())) {
-                t.second.add(state.getId());
-            }
+        int addr = ((IntValue)tbl.lookUp(var)).getVal();
+        if (!lock.isDefined(addr)) throw new InvalidMemoryAccess();
+        int free = lock.lookup(addr);
+        if (free == -1) {
+            lock.update(addr, state.getId());
         }
         else stk.push(this);
         return null;
@@ -48,6 +45,6 @@ public class AcquireStmt implements IStmt {
 
     @Override
     public String toString() {
-        return "acquire(" + var + ")";
+        return "lock(" + var + ")";
     }
 }

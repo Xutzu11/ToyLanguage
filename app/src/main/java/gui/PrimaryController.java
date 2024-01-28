@@ -41,10 +41,9 @@ public class PrimaryController {
     @FXML private TableView < SymEntry > symTable;
     @FXML private TableColumn < SymEntry, String > variableSym;
     @FXML private TableColumn < SymEntry, String > valueSym;
-    @FXML private TableView < SemaphoreEntry > semaphoreTable;
-    @FXML private TableColumn < SemaphoreEntry, String > indexSem;
-    @FXML private TableColumn < SemaphoreEntry, String > valueSem;
-    @FXML private TableColumn < SemaphoreEntry, String > listOfValuesSem;
+    @FXML private TableView < LockEntry > lockTable;
+    @FXML private TableColumn < LockEntry, String > locationLock;
+    @FXML private TableColumn < LockEntry, String > valueLock;
 
     private PrgState selectedState;
 
@@ -78,11 +77,10 @@ public class PrimaryController {
         valueSym.setCellValueFactory(new PropertyValueFactory<>("value"));
         symTable.getColumns().addAll(variableSym, valueSym);
 
-        semaphoreTable.getColumns().clear();
-        indexSem.setCellValueFactory(new PropertyValueFactory<>("index"));
-        valueSem.setCellValueFactory(new PropertyValueFactory<>("value"));
-        listOfValuesSem.setCellValueFactory(new PropertyValueFactory<>("listOfValues"));
-        semaphoreTable.getColumns().addAll(indexSem, valueSem, listOfValuesSem);
+        lockTable.getColumns().clear();
+        locationLock.setCellValueFactory(new PropertyValueFactory<>("location"));
+        valueLock.setCellValueFactory(new PropertyValueFactory<>("value"));
+        lockTable.getColumns().addAll(locationLock, valueLock);
     }
 
     public void getSelection(String stmt) {
@@ -153,12 +151,12 @@ public class PrimaryController {
         }
     }
 
-    public void updateSemaphore() throws MyException {
-        semaphoreTable.getItems().clear();
+    public void updateLock() throws MyException {
+        lockTable.getItems().clear();
         if (mainContr.programEnded()) return;
-        Map < Integer, Pair > sem = mainContr.getSemaphore().getContent();
-        for (Map.Entry<Integer, Pair > k:sem.entrySet()) {
-            semaphoreTable.getItems().add(new SemaphoreEntry(k.getKey(), k.getValue().first, k.getValue().second));
+        Map < Integer, Integer > lock = mainContr.getLock().getContent();
+        for (Map.Entry<Integer, Integer > k:lock.entrySet()) {
+            lockTable.getItems().add(new LockEntry(k.getKey(), k.getValue()));
         }
     }
 
@@ -179,7 +177,7 @@ public class PrimaryController {
             updateFiles();
             updateOutput();
             updatePrgStates();
-            updateSemaphore();
+            updateLock();
         }
         catch (MyException e) {
             triggerAlert(e.getMessage());

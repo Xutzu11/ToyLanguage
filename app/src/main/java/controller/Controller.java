@@ -10,10 +10,9 @@ import java.util.concurrent.Executors;
 
 
 import adt.MyIStack;
-import adt.MyICountSemaphore;
+import adt.MyILock;
 import adt.MyIList;
 import adt.PrgState;
-import adt.Pair;
 import exc.EndOfProgramException;
 import repo.IRepo;
 import stmt.IStmt;
@@ -50,8 +49,8 @@ public class Controller {
         return finalOutput;
     }
 
-    public MyICountSemaphore < Pair > getSemaphore() throws MyException {
-        return repo.getPrg().getSemaphore();
+    public MyILock < Integer > getLock() throws MyException {
+        return repo.getPrg().getLock();
     }
 
     public MyIStack < IStmt > getStack() throws RepoStateException {

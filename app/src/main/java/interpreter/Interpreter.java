@@ -4,14 +4,15 @@ import cmd.ExitCommand;
 import cmd.RunExample;
 import repo.IRepo;
 import repo.Repo;
-import stmt.AcquireStmt;
+import stmt.LockStmt;
+import stmt.NewLockStmt;
 import stmt.AssignStmt;
 import stmt.CompStmt;
 import stmt.ForkStmt;
 import stmt.HeapWriteStmt;
 import stmt.IStmt;
 import stmt.IfStmt;
-import stmt.NewSemaphoreStmt;
+import stmt.NopStmt;
 import stmt.NewStmt;
 import stmt.OpenFileStmt;
 import stmt.PrintStmt;
@@ -19,7 +20,7 @@ import stmt.VarDeclStmt;
 import stmt.WhileStmt;
 import stmt.CloseFileStmt;
 import stmt.ReadFileStmt;
-import stmt.ReleaseStmt;
+import stmt.UnlockStmt;
 import value.BoolValue;
 import value.IntValue;
 import value.StringValue;
@@ -47,8 +48,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex1.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("1",stmt.toString(), c));
@@ -67,8 +68,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex2.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("2", stmt.toString(), c));
@@ -87,8 +88,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex3.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("3", stmt.toString(), c));
@@ -110,8 +111,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex4.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("4", stmt.toString(), c));
@@ -134,8 +135,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex5.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("5", stmt.toString(), c));
@@ -153,8 +154,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex6.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("6", stmt.toString(), c));
@@ -174,8 +175,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex7.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("7", stmt.toString(), c));
@@ -194,8 +195,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex8.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("8", stmt.toString(), c));
@@ -214,8 +215,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex9.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("9", stmt.toString(), c));
@@ -237,8 +238,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex10.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("10", stmt.toString(), c));
@@ -266,8 +267,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex11.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("11", stmt.toString(), c));
@@ -288,8 +289,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex12.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("12", stmt.toString(), c));
@@ -312,8 +313,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex13.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("13", stmt.toString(), c));
@@ -331,8 +332,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex14.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("14", stmt.toString(), c));
@@ -354,8 +355,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex15.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("15", stmt.toString(), c));
@@ -375,30 +376,48 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex16.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("16", stmt.toString(), c));
     }
 
     public static void createExample17() throws MyException, IOException {
-        IStmt stmt = new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())),
-        new CompStmt(new VarDeclStmt("cnt", new IntType()),  
-        new CompStmt(new NewStmt("v1", new ValueExp(new IntValue(1))), 
-        new CompStmt(new NewSemaphoreStmt("cnt", new HeapReadExp(new VarExp("v1"))),
-        new CompStmt(new ForkStmt(new CompStmt(new AcquireStmt("cnt"), 
-        new CompStmt(new HeapWriteStmt("v1", new ArithExp('*', new HeapReadExp(new VarExp("v1")), new ValueExp(new IntValue(10)))), 
-        new CompStmt(new PrintStmt(new HeapReadExp(new VarExp("v1"))), new ReleaseStmt("cnt"))))), 
-        new CompStmt(new ForkStmt(new CompStmt(new AcquireStmt("cnt"), 
-        new CompStmt(new HeapWriteStmt("v1", new ArithExp('*', new HeapReadExp(new VarExp("v1")), 
-        new ValueExp(new IntValue(10)))), 
-        new CompStmt(new HeapWriteStmt("v1", 
-        new ArithExp('*', new HeapReadExp(new VarExp("v1")), new ValueExp(new IntValue(2)))), 
-        new CompStmt(new PrintStmt(new HeapReadExp(new VarExp("v1"))), new ReleaseStmt("cnt")))))), 
-        new CompStmt(new AcquireStmt("cnt"), 
-        new CompStmt(new PrintStmt(new ArithExp('-', new HeapReadExp(new VarExp("v1")), new ValueExp(new IntValue(1)))), 
-        new ReleaseStmt("cnt")))))))));
+        IStmt stmt = new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())), 
+        new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())), 
+        new CompStmt(new VarDeclStmt("x", new IntType()),
+        new CompStmt(new VarDeclStmt("q", new IntType()), 
+        new CompStmt(new NewStmt("v1", new ValueExp(new IntValue(20))), 
+        new CompStmt(new NewStmt("v2", new ValueExp(new IntValue(30))), 
+        new CompStmt(new NewLockStmt("x"), 
+        new CompStmt(new ForkStmt(
+            new CompStmt(new ForkStmt(
+                new CompStmt(new LockStmt("x"), 
+                new CompStmt(new HeapWriteStmt("v1", new ArithExp('-', new HeapReadExp(new VarExp("v1")), new ValueExp(new IntValue(1)))),
+                new UnlockStmt("x")))),
+            new CompStmt(new LockStmt("x"), 
+            new CompStmt(new HeapWriteStmt("v1", new ArithExp('*', new HeapReadExp(new VarExp("v1")), new ValueExp(new IntValue(10)))),
+            new UnlockStmt("x"))))),
+        new CompStmt(new NewLockStmt("q"), 
+        new CompStmt(new ForkStmt(
+            new CompStmt(new ForkStmt(
+                new CompStmt(new LockStmt("q"), 
+                new CompStmt(new HeapWriteStmt("v2", new ArithExp('+', new HeapReadExp(new VarExp("v2")), new ValueExp(new IntValue(5)))),
+                new UnlockStmt("q")))),
+            new CompStmt(new LockStmt("q"), 
+            new CompStmt(new HeapWriteStmt("v2", new ArithExp('*', new HeapReadExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
+            new UnlockStmt("q"))))), 
+        new CompStmt(new NopStmt(), 
+        new CompStmt(new NopStmt(),
+        new CompStmt(new NopStmt(), 
+        new CompStmt(new NopStmt(), 
+        new CompStmt(new LockStmt("x"), 
+        new CompStmt(new PrintStmt(new HeapReadExp(new VarExp("v1"))),
+        new CompStmt(new UnlockStmt("x"),
+        new CompStmt(new LockStmt("q"), 
+        new CompStmt(new PrintStmt(new HeapReadExp(new VarExp("v1"))), 
+        new UnlockStmt("q"))))))))))))))))))));
         MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
         stmt.typecheck(typeEnv);
         MyIStack <IStmt> stk = new MyStack<IStmt>();
@@ -406,8 +425,8 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyICountSemaphore < Pair > sem = new MyCountSemaphore<Pair>(); 
-        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        MyILock < Integer > lock = new MyLock<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, lock);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex17.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("17", stmt.toString(), c));
