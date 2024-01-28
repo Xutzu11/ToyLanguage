@@ -8,7 +8,7 @@ import adt.MyIDict;
 import adt.MyIStack;
 import adt.MyIToySemaphore;
 import adt.PrgState;
-import adt.Tuple;
+import adt.Pair;
 import exc.InvalidMemoryAccess;
 import exc.InvalidOperandException;
 import exc.MyException;
@@ -23,12 +23,12 @@ public class AcquireStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException, IOException {
         MyIDict < String, Value > tbl = state.getSymTable();
-        MyIToySemaphore < Tuple > sem = state.getSemaphore();
+        MyIToySemaphore < Pair > sem = state.getSemaphore();
         MyIStack < IStmt > stk = state.getExeStack();
         int index = ((IntValue)tbl.lookUp(var)).getVal();
         if (!sem.isDefined(index)) throw new InvalidMemoryAccess();
-        Tuple t = sem.lookup(index);
-        if (t.third-t.first+1 > t.second.size()) {
+        Pair t = sem.lookup(index);
+        if (t.first > t.second.size()) {
             if (!t.second.contains(state.getId())) {
                 t.second.add(state.getId());
             }

@@ -7,7 +7,7 @@ import value.Value;
 import adt.MyIDict;
 import adt.MyIToySemaphore;
 import adt.PrgState;
-import adt.Tuple;
+import adt.Pair;
 import exc.InvalidMemoryAccess;
 import exc.InvalidOperandException;
 import exc.MyException;
@@ -22,10 +22,10 @@ public class ReleaseStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException, IOException {
         MyIDict < String, Value > tbl = state.getSymTable();
-        MyIToySemaphore < Tuple > sem = state.getSemaphore();
+        MyIToySemaphore < Pair > sem = state.getSemaphore();
         int index = ((IntValue)tbl.lookUp(var)).getVal();
         if (!sem.isDefined(index)) throw new InvalidMemoryAccess();
-        Tuple t = sem.lookup(index);
+        Pair t = sem.lookup(index);
         if (t.second.contains(state.getId())) {
             t.second.remove(t.second.indexOf(state.getId()));
         }

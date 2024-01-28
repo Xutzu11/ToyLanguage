@@ -13,14 +13,14 @@ public class PrgState{
     private int id;
     private MyIStack < IStmt > exeStack;
     private MyIDict < String, Value > symTable;
-    private MyIToySemaphore < Tuple > semaphore;
+    private MyIToySemaphore < Pair > semaphore;
     private MyIList < Value > out;
     private MyIFileTable < StringValue, BufferedReader > fileTable;
     private MyIHeap < Value > heap;
     // private IStmt originalProgram; //optional field, but good to have
     
     public PrgState(MyIStack < IStmt > stk, MyIDict < String, Value > symtbl, MyIList < Value >
-            ot, MyIFileTable < StringValue, BufferedReader > ftb, MyIHeap < Value > heap, IStmt prg, MyIToySemaphore < Tuple > semaphore){
+            ot, MyIFileTable < StringValue, BufferedReader > ftb, MyIHeap < Value > heap, IStmt prg, MyIToySemaphore < Pair > semaphore){
         exeStack = stk;
         symTable = symtbl;
         out = ot;
@@ -57,7 +57,7 @@ public class PrgState{
         this.heap = heap;
     }
 
-    public MyIToySemaphore < Tuple > getSemaphore() {
+    public MyIToySemaphore < Pair > getSemaphore() {
         return this.semaphore;
     }
 

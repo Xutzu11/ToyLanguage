@@ -47,7 +47,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex1.out");
         Controller c = new Controller(r);
@@ -67,7 +67,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex2.out");
         Controller c = new Controller(r);
@@ -87,7 +87,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex3.out");
         Controller c = new Controller(r);
@@ -110,7 +110,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex4.out");
         Controller c = new Controller(r);
@@ -134,7 +134,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex5.out");
         Controller c = new Controller(r);
@@ -153,7 +153,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex6.out");
         Controller c = new Controller(r);
@@ -174,7 +174,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex7.out");
         Controller c = new Controller(r);
@@ -194,7 +194,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex8.out");
         Controller c = new Controller(r);
@@ -214,7 +214,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex9.out");
         Controller c = new Controller(r);
@@ -237,7 +237,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex10.out");
         Controller c = new Controller(r);
@@ -266,7 +266,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex11.out");
         Controller c = new Controller(r);
@@ -288,7 +288,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex12.out");
         Controller c = new Controller(r);
@@ -312,7 +312,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex13.out");
         Controller c = new Controller(r);
@@ -331,7 +331,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex14.out");
         Controller c = new Controller(r);
@@ -354,7 +354,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex15.out");
         Controller c = new Controller(r);
@@ -375,7 +375,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex16.out");
         Controller c = new Controller(r);
@@ -385,8 +385,8 @@ public class Interpreter {
     public static void createExample17() throws MyException, IOException {
         IStmt stmt = new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())),
         new CompStmt(new VarDeclStmt("cnt", new IntType()),  
-        new CompStmt(new NewStmt("v1", new ValueExp(new IntValue(2))), 
-        new CompStmt(new NewSemaphoreStmt("cnt", new HeapReadExp(new VarExp("v1")), new ValueExp(new IntValue(2))),
+        new CompStmt(new NewStmt("v1", new ValueExp(new IntValue(1))), 
+        new CompStmt(new NewSemaphoreStmt("cnt", new HeapReadExp(new VarExp("v1"))),
         new CompStmt(new ForkStmt(new CompStmt(new AcquireStmt("cnt"), 
         new CompStmt(new HeapWriteStmt("v1", new ArithExp('*', new HeapReadExp(new VarExp("v1")), new ValueExp(new IntValue(10)))), 
         new CompStmt(new PrintStmt(new HeapReadExp(new VarExp("v1"))), new ReleaseStmt("cnt"))))), 
@@ -406,7 +406,7 @@ public class Interpreter {
         MyIList <Value> out = new MyList < Value >();
         MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
         MyIHeap < Value > heap = new MyHeap<Value>(); 
-        MyIToySemaphore < Tuple > sem = new MyToySemaphore<Tuple>(); 
+        MyIToySemaphore < Pair > sem = new MyToySemaphore<Pair>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
         IRepo r = new Repo(PrgState, "src/main/java/files/ex17.out");
         Controller c = new Controller(r);

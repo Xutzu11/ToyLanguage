@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 import adt.PrgState;
-import adt.Tuple;
+import adt.Pair;
 import controller.Controller;
 import exc.MyException;
 import exc.RepoStateException;
@@ -156,9 +156,9 @@ public class PrimaryController {
     public void updateSemaphore() throws MyException {
         semaphoreTable.getItems().clear();
         if (mainContr.programEnded()) return;
-        Map < Integer, Tuple > sem = mainContr.getSemaphore().getContent();
-        for (Map.Entry<Integer, Tuple > k:sem.entrySet()) {
-            semaphoreTable.getItems().add(new SemaphoreEntry(k.getKey(), k.getValue().third-k.getValue().first+1, k.getValue().second));
+        Map < Integer, Pair > sem = mainContr.getSemaphore().getContent();
+        for (Map.Entry<Integer, Pair > k:sem.entrySet()) {
+            semaphoreTable.getItems().add(new SemaphoreEntry(k.getKey(), k.getValue().first, k.getValue().second));
         }
     }
 

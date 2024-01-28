@@ -13,7 +13,7 @@ import adt.MyIStack;
 import adt.MyIToySemaphore;
 import adt.MyIList;
 import adt.PrgState;
-import adt.Tuple;
+import adt.Pair;
 import exc.EndOfProgramException;
 import repo.IRepo;
 import stmt.IStmt;
@@ -50,7 +50,7 @@ public class Controller {
         return finalOutput;
     }
 
-    public MyIToySemaphore < Tuple > getSemaphore() throws MyException {
+    public MyIToySemaphore < Pair > getSemaphore() throws MyException {
         return repo.getPrg().getSemaphore();
     }
 
