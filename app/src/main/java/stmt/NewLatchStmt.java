@@ -2,6 +2,7 @@ package stmt;
 
 import java.io.IOException;
 import adt.MyIDict;
+import adt.MyIHeap;
 import adt.MyILatch;
 import adt.PrgState;
 import exc.InvalidAssignException;
@@ -26,9 +27,14 @@ public class NewLatchStmt implements IStmt {
     public PrgState execute(PrgState state) throws MyException, IOException {
         MyILatch < Integer > latch = state.getLatch();
         MyIDict < String, Value > tbl = state.getSymTable();
-        int n = ((IntValue)e.eval(state.getSymTable(), state.getHeap())).getVal();
-        if (n<0) throw new InvalidAssignException("positive");
-        int newFreeAdr = latch.allocate(n);
+        MyIHeap < Value > heap = state.getHeap();
+        Value v = e.eval(tbl, heap);
+        // if (!v.getType().equals(new IntType())) throw new InvalidAssignException(var);
+        // if (tbl.lookUp(var) == null) throw new VariableUndefinedException(var);
+        // if (!tbl.lookUp(var).getType().equals(new IntType())) throw new InvalidAssignException(var);
+        int num = ((IntValue)v).getVal();
+        if (num<0) throw new InvalidOperandException("positive integer");
+        int newFreeAdr = latch.allocate(num);
         tbl.put(var, new IntValue(newFreeAdr));
         return null;
     }
@@ -49,6 +55,6 @@ public class NewLatchStmt implements IStmt {
 
     @Override
     public String toString() {
-        return "newLatch(" + var + "," + e.toString() + ")";
+        return "newLatch(" + var + "," + e.toString() + ");";
     }
 }

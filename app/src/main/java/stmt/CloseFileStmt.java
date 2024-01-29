@@ -41,7 +41,7 @@ public class CloseFileStmt implements IStmt {
     }
 
     public String toString() {
-        return "close(" + exp.toString() + ")";
+        return "close(" + exp.toString() + ");";
     }
 
     @Override

@@ -382,17 +382,21 @@ public class Interpreter {
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("16", stmt.toString(), c));
     }
-/*new(v1,2);new(v2,3);new(v3,4);newLatch(cnt,rH(v2));
-fork(wh(v1,rh(v1)*10));print(rh(v1));countDown(cnt);
-fork(wh(v2,rh(v2)*10));print(rh(v2));countDown(cnt);
-fork(wh(v3,rh(v3)*10));print(rh(v3));countDown(cnt))));
+/*
+Ref int v1; Ref int v2; Ref int v3; int cnt; 
+new(v1,2);new(v2,3);new(v3,4);newLatch(cnt,rH(v2));
+fork(wh(v1,rh(v1)*10);print(rh(v1));countDown(cnt); 
+ fork(wh(v2,rh(v2)*10);print(rh(v2));countDown(cnt);
+ fork(wh(v3,rh(v3)*10);print(rh(v3));countDown(cnt))));
 await(cnt);
 print(100);
 countDown(cnt);
 print(100)
-The final Out should be {20,id-first-child,30,id-second-child,40, id-third-child,
-100,100} where id-first-child, id-second-child and id-third-child are the unique
-identifiers of those three new threads created by fork. */
+The final Out should be 
+{20, id-first-child, 30, id-second-child, 40, id-third-child, 100, id_parent, 100} 
+where id-first-child, id-second-child and id-third-child are the 
+unique identifiers of those three new threads created by fork, 
+while id_parent is the identifier of the main thread. */
     public static void createExample17() throws MyException, IOException {
         IStmt stmt = new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())), 
         new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())), 

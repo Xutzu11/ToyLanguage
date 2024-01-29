@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MyLatch < T > implements MyILatch < T > {
     AtomicInteger freeAdr; 
-    Map <Integer, T> latchTable;
+    Map < Integer, T > latchTable;
 
     public MyLatch(){
         this.latchTable = new HashMap<>();

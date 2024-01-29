@@ -8,6 +8,7 @@ import adt.MyIStack;
 import adt.PrgState;
 import exc.InvalidMemoryAccess;
 import exc.InvalidOperandException;
+import exc.InvalidTypeException;
 import exc.MyException;
 import exc.VariableUndefinedException;
 import type.IntType;
@@ -25,7 +26,10 @@ public class AwaitStmt implements IStmt{
         MyIDict < String, Value > tbl = state.getSymTable();
         MyILatch < Integer > latch = state.getLatch();
         MyIStack < IStmt > stk = state.getExeStack();
-        int index = ((IntValue)tbl.lookUp(var)).getVal();
+        Value v = tbl.lookUp(var);
+        // if (v == null) throw new VariableUndefinedException(var);
+        // if (!v.getType().equals(new IntType())) throw new InvalidOperandException("int");
+        int index = ((IntValue)v).getVal();
         if (latch.isDefined(index)) {
             if (latch.lookup(index) != 0) {
                 stk.push(this);
@@ -47,6 +51,6 @@ public class AwaitStmt implements IStmt{
 
     @Override
     public String toString() {
-        return "await(" + var + ")";
+        return "await(" + var + ");";
     }
 }

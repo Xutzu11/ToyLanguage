@@ -17,7 +17,7 @@
    </padding>
    <children>
       <TextField fx:id="prgNumber" editable="false" />
-      <HBox prefHeight="193.0" prefWidth="434.0">
+      <HBox prefHeight="193.0" prefWidth="832.0">
          <children>
             <VBox prefHeight="193.0" prefWidth="414.0">
                <children>
@@ -52,7 +52,7 @@
             </VBox>
          </children>
       </HBox>
-      <HBox prefHeight="149.0" prefWidth="658.0">
+      <HBox prefHeight="149.0" prefWidth="832.0">
          <children>
             <VBox prefHeight="149.0" prefWidth="161.0">
                <children>
@@ -63,39 +63,39 @@
                   <ListView fx:id="outputList" prefHeight="135.0" prefWidth="159.0" />
                </children>
             </VBox>
-            <VBox prefHeight="149.0" prefWidth="198.0">
+            <VBox prefHeight="149.0" prefWidth="243.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="271.0" text="Heap table" textAlignment="CENTER">
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="243.0" text="Heap table" textAlignment="CENTER">
                      <font>
                         <Font name="Constantia" size="13.0" />
                      </font></Label>
-                  <TableView fx:id="heapTable" prefHeight="133.0" prefWidth="203.0">
+                  <TableView fx:id="heapTable" prefHeight="133.0" prefWidth="243.0">
                      <columns>
-                        <TableColumn fx:id="addressHeap" prefWidth="84.00002801418304" text="Address" />
-                        <TableColumn fx:id="valueHeap" prefWidth="110.66669464111328" text="Value" />
+                        <TableColumn fx:id="addressHeap" prefWidth="83" text="Address" />
+                        <TableColumn fx:id="valueHeap" prefWidth="160" text="Value" />
                      </columns></TableView>
                </children>
             </VBox>
-            <VBox prefHeight="149.0" prefWidth="142.0">
+            <VBox prefHeight="149.0" prefWidth="171.0">
                <children>
                   <Label alignment="CENTER" prefHeight="17.0" prefWidth="193.0" text="File table">
                      <font>
                         <Font name="Constantia" size="13.0" />
                      </font></Label>
-                  <ListView fx:id="fileTable" prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="fileTable" prefHeight="134.0" prefWidth="176.0" />
                </children>
             </VBox>
-            <VBox prefHeight="149.0" prefWidth="160.0">
+            <VBox prefHeight="149.0" prefWidth="290.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="160" text="Latch table">
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="290" text="Latch table">
                      <font>
                         <Font name="Constantia" size="13.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="latchTable" prefHeight="133.0" prefWidth="160">
+                  <TableView fx:id="latchTable" prefHeight="133.0" prefWidth="290">
                      <columns>
-                        <TableColumn fx:id="locationLatch" prefWidth="80" text="Location" />
-                        <TableColumn fx:id="valueLatch" prefWidth="80" text="Value" />
+                        <TableColumn fx:id="locationLatch" prefWidth="120" text="Location" />
+                        <TableColumn fx:id="valueLatch" prefWidth="170" text="Value" />
                      </columns>
                   </TableView>
                </children>

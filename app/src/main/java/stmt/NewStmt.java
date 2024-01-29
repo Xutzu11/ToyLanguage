@@ -42,7 +42,7 @@ public class NewStmt implements IStmt{
     }
 
     public String toString() {
-        return "new("+varname+","+exp.toString()+")";
+        return "new("+varname+","+exp.toString()+");";
     }
 
     @Override

@@ -48,7 +48,7 @@ public class HeapWriteStmt implements IStmt{
     }
 
     public String toString() {
-        return "wH("+varname+","+exp.toString()+")";
+        return "wH("+varname+","+exp.toString()+");";
     }
 
     @Override

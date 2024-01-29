@@ -54,7 +54,7 @@ public class ReadFileStmt implements IStmt {
     }
 
     public String toString() {
-        return "read(" + exp.toString() + "," + varname + ")";
+        return "read(" + exp.toString() + "," + varname + ");";
     }
 
     @Override

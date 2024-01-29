@@ -41,7 +41,7 @@ public class OpenFileStmt implements IStmt {
     }
 
     public String toString() {
-        return "open(" + exp.toString() + ")";
+        return "open(" + exp.toString() + ");";
     }
 
     @Override

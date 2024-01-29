@@ -5,6 +5,7 @@ import type.*;
 import adt.MyIDict;
 import adt.MyILatch;
 import adt.PrgState;
+import exc.InvalidMemoryAccess;
 import exc.InvalidOperandException;
 import exc.MyException;
 import exc.VariableUndefinedException;
@@ -22,15 +23,18 @@ public class CountdownStmt implements IStmt{
     public PrgState execute(PrgState state) throws MyException, IOException {
         MyIDict < String, Value > tbl = state.getSymTable();
         MyILatch < Integer > latch = state.getLatch();
-        int index = ((IntValue)tbl.lookUp(var)).getVal();
+        Value v = tbl.lookUp(var);
+        // if (v == null) throw new VariableUndefinedException(var);
+        // if (!v.getType().equals(new IntType())) throw new InvalidOperandException("int");
+        int index = ((IntValue)v).getVal();
         if (latch.isDefined(index)) {
             if (latch.lookup(index) > 0) {
                 latch.update(index, latch.lookup(index)-1);
-                state.getOut().add(new IntValue(state.getId()));
             }
+            state.getOut().add(new IntValue(state.getId()));
             return null;
         }
-        return null;
+        else throw new InvalidMemoryAccess();
     }
 
     @Override
@@ -45,6 +49,6 @@ public class CountdownStmt implements IStmt{
 
     @Override
     public String toString() {
-        return "countdown(" + var + ")";
+        return "countdown(" + var + ");";
     }
 }
