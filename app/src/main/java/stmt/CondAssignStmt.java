@@ -4,6 +4,7 @@ import java.io.IOException;
 import type.*;
 import adt.MyIDict;
 import adt.MyIHeap;
+import adt.MyIStack;
 import adt.PrgState;
 import exc.InvalidAssignException;
 import exc.InvalidTypeException;
@@ -25,26 +26,9 @@ public class CondAssignStmt implements IStmt {
     
     @Override
     public PrgState execute(PrgState state) throws MyException, IOException {
-        MyIDict <String, Value> dct = state.getSymTable();
-        MyIHeap < Value > hp = state.getHeap();
-        if (dct.isDefined(var)) {
-            Value val1 = e1.eval(dct, hp);
-            Value val2 = e2.eval(dct, hp);
-            Value val3 = e3.eval(dct, hp);
-            Type typ = (dct.lookUp(var)).getType();
-            if (val2.getType().equals(typ) && val3.getType().equals(typ))  {
-                if (val1.getType().equals(new BoolType())) {
-                    if (val1.equals(new BoolValue(true))) {
-                        dct.put(var, val2);
-                    }
-                    else dct.put(var, val3);
-                    return null;
-                }
-                else throw new InvalidTypeException();                
-            }
-            else throw new InvalidAssignException(var);
-        }
-        else throw new VariableUndefinedException(var);
+        MyIStack < IStmt > stk = state.getExeStack();
+        stk.push(new IfStmt(e1, new AssignStmt(var, e2), new AssignStmt(var, e3)));
+        return null;
     }
 
     @Override

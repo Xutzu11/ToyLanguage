@@ -7,6 +7,7 @@ import repo.Repo;
 import stmt.AssignStmt;
 import stmt.AwaitStmt;
 import stmt.CompStmt;
+import stmt.CondAssignStmt;
 import stmt.CountdownStmt;
 import stmt.ForkStmt;
 import stmt.HeapWriteStmt;
@@ -49,7 +50,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex1.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex1.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("1",stmt.toString(), c));
     }
@@ -69,7 +70,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex2.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex2.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("2", stmt.toString(), c));
     }
@@ -89,7 +90,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex3.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex3.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("3", stmt.toString(), c));
     }
@@ -112,14 +113,14 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex4.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex4.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("4", stmt.toString(), c));
     }
 
     public static void createExample5() throws MyException, IOException {
         IStmt stmt = new CompStmt(new VarDeclStmt("varf",new StringType()),
-                    new CompStmt(new AssignStmt("varf", new ValueExp(new StringValue("src/main/java/files/file.in"))),
+                    new CompStmt(new AssignStmt("varf", new ValueExp(new StringValue("app/src/main/java/files/file.in"))),
                     new CompStmt(new OpenFileStmt(new VarExp("varf")),
                     new CompStmt(new VarDeclStmt("varc", new IntType()),
                     new CompStmt(new ReadFileStmt(new VarExp("varf"), "varc"),
@@ -136,7 +137,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex5.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex5.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("5", stmt.toString(), c));
     }
@@ -155,7 +156,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex6.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex6.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("6", stmt.toString(), c));
     }
@@ -176,7 +177,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex7.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex7.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("7", stmt.toString(), c));
     }
@@ -196,7 +197,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex8.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex8.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("8", stmt.toString(), c));
     }
@@ -216,7 +217,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex9.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex9.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("9", stmt.toString(), c));
     }
@@ -239,7 +240,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex10.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex10.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("10", stmt.toString(), c));
     }
@@ -268,7 +269,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex11.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex11.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("11", stmt.toString(), c));
     }
@@ -290,7 +291,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex12.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex12.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("12", stmt.toString(), c));
     }
@@ -314,7 +315,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex13.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex13.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("13", stmt.toString(), c));
     }
@@ -333,7 +334,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex14.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex14.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("14", stmt.toString(), c));
     }
@@ -356,7 +357,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex15.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex15.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("15", stmt.toString(), c));
     }
@@ -377,7 +378,7 @@ public class Interpreter {
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex16.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex16.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("16", stmt.toString(), c));
     }
@@ -423,9 +424,44 @@ identifiers of those three new threads created by fork. */
         MyIHeap < Value > heap = new MyHeap<Value>(); 
         MyILatch < Integer > sem = new MyLatch<Integer>(); 
         PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
-        IRepo r = new Repo(PrgState, "src/main/java/files/ex17.out");
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex17.out");
         Controller c = new Controller(r);
         tm.addCommand(new RunExample("17", stmt.toString(), c));
+    }
+/* Ref int a; Ref int b; int v;
+new(a,0); new(b,0);
+wh(a,1); wh(b,2);
+v=(rh(a)<rh(b))?100:200;
+print(v);
+v= ((rh(b)-2)>rh(a))?100:200;
+print(v); 
+The final Out should be {100,200} */
+    public static void createExample18() throws MyException, IOException {
+        IStmt stmt = new CompStmt(new VarDeclStmt("a", new RefType(new IntType())),
+        new CompStmt(new VarDeclStmt("b", new RefType(new IntType())), 
+        new CompStmt(new VarDeclStmt("v", new IntType()), 
+        new CompStmt(new NewStmt("a", new ValueExp(new IntValue(0))), 
+        new CompStmt(new NewStmt("b", new ValueExp(new IntValue(0))), 
+        new CompStmt(new HeapWriteStmt("a", new ValueExp(new IntValue(1))), 
+        new CompStmt(new HeapWriteStmt("b", new ValueExp(new IntValue(2))), 
+        new CompStmt(new CondAssignStmt("v", new RelationalExp("<", new HeapReadExp(new VarExp("a")), 
+        new HeapReadExp(new VarExp("b"))), new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))), 
+        new CompStmt(new PrintStmt(new VarExp("v")), 
+        new CompStmt(new CondAssignStmt("v", new RelationalExp(">", new ArithExp('-', new HeapReadExp(new VarExp("b")), new ValueExp(new IntValue(2))), new HeapReadExp(new VarExp("a"))), 
+        new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))), 
+        new PrintStmt(new VarExp("v"))))))))))));
+        MyIDict < String, Type > typeEnv = new MyDict<String, Type>();
+        stmt.typecheck(typeEnv);
+        MyIStack <IStmt> stk = new MyStack<IStmt>();
+        MyIDict <String, Value> symtbl = new MyDict <String, Value >();
+        MyIList <Value> out = new MyList < Value >();
+        MyIFileTable < StringValue, BufferedReader > filetbl = new MyFileTable<StringValue, BufferedReader>(); 
+        MyIHeap < Value > heap = new MyHeap<Value>(); 
+        MyILatch < Integer > sem = new MyLatch<Integer>(); 
+        PrgState PrgState = new PrgState(stk, symtbl, out, filetbl, heap, stmt, sem);
+        IRepo r = new Repo(PrgState, "app/src/main/java/files/ex18.out");
+        Controller c = new Controller(r);
+        tm.addCommand(new RunExample("18", stmt.toString(), c));
     }
 
     public TextMenu getMenu() {
@@ -455,6 +491,8 @@ identifiers of those three new threads created by fork. */
             createExample14();
             createExample15();
             createExample16();
+            createExample17();
+            createExample18();
         }
         catch (MyException | IOException e) {
             System.out.println(e.getMessage());
@@ -481,6 +519,8 @@ identifiers of those three new threads created by fork. */
             createExample14();
             createExample15();
             createExample16();
+            createExample17();
+            createExample18();
         }
         catch (MyException | IOException e) {
             System.out.println(e.getMessage());
