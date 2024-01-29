@@ -156,8 +156,8 @@ public class PrimaryController {
     public void updateBarrier() throws MyException {
         barrierTable.getItems().clear();
         if (mainContr.programEnded()) return;
-        Map < Integer, Pair > sem = mainContr.getBarrier().getContent();
-        for (Map.Entry<Integer, Pair > k:sem.entrySet()) {
+        Map < Integer, Pair > bar = mainContr.getBarrier().getContent();
+        for (Map.Entry<Integer, Pair > k:bar.entrySet()) {
             barrierTable.getItems().add(new BarrierEntry(k.getKey(), k.getValue().first, k.getValue().second));
         }
     }
